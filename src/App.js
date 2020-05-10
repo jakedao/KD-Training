@@ -1,12 +1,22 @@
 import React from 'react';
-import { BottomBar, Item } from './components';
+import {Provider} from 'react-redux';
+
+import GlobalStyle from './GlobalStyle'
+
+import { BottomBar} from './components';
+import {ItemList} from './containers/';
+
+import store from './models/configureStore'
 
 const App = () => {
   return(
-    <div>
-      <Item />
-      <BottomBar />
-    </div>
+    <React.Fragment>
+      <Provider store={store}>
+        <GlobalStyle />
+        <ItemList />
+        <BottomBar />
+      </Provider>
+    </React.Fragment>
   );
 };
 
