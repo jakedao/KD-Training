@@ -3,7 +3,7 @@ import {Provider} from 'react-redux';
 
 import GlobalStyle from './GlobalStyle'
 
-import { BottomBar} from './components';
+import { BottomBar, Input, Output} from './components';
 import {ItemList, Form} from './containers/';
 
 import store from './models/configureStore'
@@ -13,9 +13,7 @@ const App = () => {
     <React.Fragment>
       <Provider store={store}>
         <GlobalStyle />
-        {/* <ItemList /> */}
-        {/* <Form /> */}
-        {/* <BottomBar /> */}
+        <Output />
       </Provider>
     </React.Fragment>
   );
