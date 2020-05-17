@@ -32,7 +32,7 @@ const Items = ({products, onAdd, onRemove, quantity}) => {
   );
 };
 
-Items.prototype = {
+Items.propTypes = {
   products: PropTypes.shape({
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
