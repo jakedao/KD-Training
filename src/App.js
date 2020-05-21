@@ -7,13 +7,14 @@ import { BottomBar, Input, Output} from './components';
 import {ItemList, Form} from './containers/';
 
 import store from './models/configureStore'
+import Styling from './components/PlayWithStying';
 
 const App = () => {
   return(
     <React.Fragment>
       <Provider store={store}>
         <GlobalStyle />
-        <Output />
+        <Styling />
       </Provider>
     </React.Fragment>
   );

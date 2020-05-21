@@ -1,24 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-
-const CharComponent = ({text}) => {
-
+const CharComponent = ({text, onReset}) => {
+  console.log('Check text for every change: ',text);
   const charArray = text.split('');
 
-  const renderChar = (arr) => {
-    arr.map(c => {
-      return <span>{c}</span>
-    });
-  }
-
   return(
-    <div>{renderChar(charArray)}</div>
+    <div onClick={() => onReset()}>
+      {charArray && charArray.map(c => {
+        return <span>{`[${c}],`}</span>
+      })}
+    </div>
   );
 };
 
 CharComponent.propTypes = {
   text: PropTypes.string.isRequired,
+  onReset: PropTypes.func.isRequired,
 }
 
 export default CharComponent;

@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Input from './Input'
 import ValidationComponent from './ValidationComponent'
 import CharComponent from './CharComponent';
+
+import {Wrapper} from './styled';
 
 const Output = () => {
   const [text, setText] = useState('');
@@ -10,14 +12,17 @@ const Output = () => {
   const handleTextChange = (event) => {
     return setText(event.target.value)
   }
+
+  const clearText = () => {
+    setText('');
+  }
   return(
-    <div>
-      <Input onChangeHandler={handleTextChange} />
-      <span>{text}</span>
+    <Wrapper>
+      <Input onChangeHandler={handleTextChange} value={text} />
       <ValidationComponent textInput={text} />
-      <CharComponent text={text}/>
-    </div>
+      <CharComponent text={text} onReset={() => clearText()} />
+    </Wrapper>
   );
 }
 
-export default  Output;
+export default Output;
