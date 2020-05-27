@@ -1,23 +1,29 @@
-import React from 'react';
-import {Provider} from 'react-redux';
+import React from "react";
+import { Provider } from "react-redux";
 
-import GlobalStyle from './GlobalStyle'
+import GlobalStyle from "./GlobalStyle";
 
-import { BottomBar, Input, Output} from './components';
-import {ItemList, Form} from './containers/';
+import { BottomBar, Input, Output } from "./components";
+import { ItemList, Form, Dogs } from "./containers/";
 
-import store from './models/configureStore'
-import Styling from './components/PlayWithStying';
+import store from "./models/configureStore";
 
-const App = () => {
-  return(
-    <React.Fragment>
-      <Provider store={store}>
-        <GlobalStyle />
-        <Styling />
-      </Provider>
-    </React.Fragment>
-  );
-};
+class App extends React.Component {
+
+  shouldComponentUpdate() {
+    console.log('App.js should component')
+    return true;
+  }
+  render() {
+    return (
+      <React.Fragment>
+        <Provider store={store}>
+          <GlobalStyle />
+          <Dogs />
+        </Provider>
+      </React.Fragment>
+    );
+  }
+}
 
 export default App;

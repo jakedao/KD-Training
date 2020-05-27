@@ -22,8 +22,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .bold {
-    font-weight: 'bold';
+    font-weight: bold;
   }
+
 `;
 
 export default GlobalStyle;
