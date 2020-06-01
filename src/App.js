@@ -5,6 +5,7 @@ import GlobalStyle from "./GlobalStyle";
 
 import { BottomBar, Input, Output } from "./components";
 import { ItemList, Form, Dogs } from "./containers/";
+import withClass from './hoc/withClass'
 
 import store from "./models/configureStore";
 
@@ -26,4 +27,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withClass(App);

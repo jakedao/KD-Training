@@ -1,5 +1,7 @@
 import React, {useEffect, useState, memo } from 'react';
+
 import PropTypes from 'prop-types';
+import withClass from '../../hoc/withClass'
 
 const Dog = ({data}) => {
 
@@ -47,4 +49,4 @@ Dog.propTypes = {
   })),
 }
 
-export default React.memo(Dog);
+export default withClass(Dog);
