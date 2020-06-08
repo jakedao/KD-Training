@@ -1,10 +1,11 @@
-import React, {useEffect, useState, memo } from 'react';
+import React, {useEffect, useState, memo, useRef } from 'react';
 
 import PropTypes from 'prop-types';
-import withClass from '../../hoc/withClass'
+import withClass from '../../hoc/withClass';
+import BarkContext from '../../context/bark'
 
 const Dog = ({data}) => {
-
+  console.log(data);
   const [dog, setDog] = useState(data);
   const classes = []
   dog.length <= 2 && classes.push('red');
@@ -20,7 +21,7 @@ const Dog = ({data}) => {
   });
 
   const renderList = (items) => {
-    console.log('render list', items)
+    console.log(`What is dog class:`, classes)
     return items.map((item,id) => {
       return (
         <div 
@@ -37,6 +38,9 @@ const Dog = ({data}) => {
   return(
     <div>
       {dog.length > 0 && renderList(dog)}
+      {/* <BarkContext.Consumer>
+        {context => context.bart ? <p>Your dog is barking </p> : <p>Your dog is sleeping</p>}
+      </BarkContext.Consumer> */}
     </div>
   )
 };
@@ -49,4 +53,4 @@ Dog.propTypes = {
   })),
 }
 
-export default withClass(Dog);
+export default Dog;

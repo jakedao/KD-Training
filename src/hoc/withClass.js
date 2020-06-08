@@ -1,10 +1,10 @@
 import React from 'react';
 
-const withClass = (WrappedComponent, className) => {
+const withClass = (WrappedComponent, className, value) => {
   return props => {
     return (
       <div className={className}>
-        <WrappedComponent/>
+        <WrappedComponent value={props}/>
       </div>
     );
   }
